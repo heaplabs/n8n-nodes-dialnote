@@ -46,7 +46,8 @@
       "dist/credentials/DialnoteApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Dialnote/Dialnote.node.js"
+      "dist/nodes/Dialnote/Dialnote.node.js",
+      "dist/nodes/DialnoteTrigger/DialnoteTrigger.node.js"
     ]
   },
   "devDependencies": {

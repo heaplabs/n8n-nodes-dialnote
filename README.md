@@ -51,7 +51,9 @@ Built and tested against n8n 1.x. Uses only `n8n-workflow` as a peer dependency 
 
 - Phone numbers are E.164 (`+14155551234`).
 - List operations return the API's `data` array; `find` returns the matching contacts.
-- To test a trigger, activate the workflow (or use **Listen for test event**) and place a call in dialnote. Test URLs are registered like any other webhook and removed when you stop listening.
+- To test a trigger, activate the workflow (or use **Listen for test event**) and place a call in dialnote. Test URLs are registered like any other webhook and removed when you stop listening. There is no polling and no sample data: the first item arrives with the first real event.
+- Triggers need a **full-access** key; with a read-only key activation fails with the API's 403 message.
+- Each activated trigger appears in dialnote under **Settings > Webhooks** as `n8n Webhook - <event>`. Deleting it there is harmless: the next activation re-registers it.
 
 ## Resources
 
