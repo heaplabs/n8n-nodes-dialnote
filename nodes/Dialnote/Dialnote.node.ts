@@ -1,8 +1,15 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
+import { getMessagingChannels } from './GenericFunctions';
+import { callLogDescription } from './resources/callLog';
+import { contactDescription } from './resources/contact';
+import { contactNoteDescription } from './resources/contactNote';
+import { conversationDescription } from './resources/conversation';
+import { conversationNoteDescription } from './resources/conversationNote';
+import { messageDescription } from './resources/message';
 
 /**
- * dialnote actions node (declarative). Resources and operations are added per
- * resource under ./resources; this shell carries the credential and request
+ * dialnote actions node (declarative). Each resource under ./resources owns its
+ * operations and fields; this class carries the credential and the request
  * defaults every operation shares.
  */
 export class Dialnote implements INodeType {
@@ -33,6 +40,34 @@ export class Dialnote implements INodeType {
 				'Content-Type': 'application/json',
 			},
 		},
-		properties: [],
+		properties: [
+			{
+				displayName: 'Resource',
+				name: 'resource',
+				type: 'options',
+				noDataExpression: true,
+				options: [
+					{ name: 'Call Log', value: 'callLog' },
+					{ name: 'Contact', value: 'contact' },
+					{ name: 'Contact Note', value: 'contactNote' },
+					{ name: 'Conversation', value: 'conversation' },
+					{ name: 'Conversation Note', value: 'conversationNote' },
+					{ name: 'Message', value: 'message' },
+				],
+				default: 'contact',
+			},
+			...callLogDescription,
+			...contactDescription,
+			...contactNoteDescription,
+			...conversationDescription,
+			...conversationNoteDescription,
+			...messageDescription,
+		],
+	};
+
+	methods = {
+		loadOptions: {
+			getMessagingChannels,
+		},
 	};
 }
