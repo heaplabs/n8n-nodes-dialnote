@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import pkg from '../package.json';
+import dialnoteCodex from '../nodes/Dialnote/Dialnote.node.json';
+import triggerCodex from '../nodes/DialnoteTrigger/DialnoteTrigger.node.json';
 // Vite's raw import: the strict community lint bans node:fs even in tests.
 import changelog from '../CHANGELOG.md?raw';
 
@@ -22,6 +24,16 @@ describe('package manifest', () => {
 		expect(pkg.bugs.url).toBe('https://github.com/heaplabs/n8n-nodes-dialnote/issues');
 		expect(pkg.homepage).toMatch(/^https:\/\/dialnote\.com\//);
 		expect(pkg.author.email).not.toBe('');
+	});
+
+	it('links node docs to public pages, never the private monorepo (n8n manual review)', () => {
+		const urls = [dialnoteCodex, triggerCodex].flatMap((codex) =>
+			[...codex.resources.primaryDocumentation, ...codex.resources.credentialDocumentation].map((d) => d.url),
+		);
+		expect(urls).toHaveLength(4);
+		for (const url of urls) {
+			expect(url).toMatch(/^https:\/\/(github\.com\/heaplabs\/n8n-nodes-dialnote|dialnote\.com)([/#]|$)/);
+		}
 	});
 
 	it('ships dist only, so the publish workflow and release script never reach npm', () => {

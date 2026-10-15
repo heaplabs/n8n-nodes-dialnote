@@ -6,12 +6,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://github.com/heaplabs/sr_call_app/tree/main/n8n-nodes-dialnote#credentials"
+				"url": "https://github.com/heaplabs/n8n-nodes-dialnote#credentials"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://github.com/heaplabs/sr_call_app/tree/main/n8n-nodes-dialnote#readme"
+				"url": "https://github.com/heaplabs/n8n-nodes-dialnote"
 			}
 		]
 	}
