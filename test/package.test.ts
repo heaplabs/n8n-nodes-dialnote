@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import pkg from '../package.json';
 import dialnoteCodex from '../nodes/Dialnote/Dialnote.node.json';
 import triggerCodex from '../nodes/DialnoteTrigger/DialnoteTrigger.node.json';
+import { Dialnote } from '../nodes/Dialnote/Dialnote.node';
+import { DialnoteTrigger } from '../nodes/DialnoteTrigger/DialnoteTrigger.node';
 // Vite's raw import: the strict community lint bans node:fs even in tests.
 import changelog from '../CHANGELOG.md?raw';
 
@@ -24,6 +26,11 @@ describe('package manifest', () => {
 		expect(pkg.bugs.url).toBe('https://github.com/heaplabs/n8n-nodes-dialnote/issues');
 		expect(pkg.homepage).toMatch(/^https:\/\/dialnote\.com\//);
 		expect(pkg.author.email).not.toBe('');
+	});
+
+	it('names each codex after <package>.<node name>, as n8n resolves it (n8n manual review)', () => {
+		expect(dialnoteCodex.node).toBe(`${pkg.name}.${new Dialnote().description.name}`);
+		expect(triggerCodex.node).toBe(`${pkg.name}.${new DialnoteTrigger().description.name}`);
 	});
 
 	it('links node docs to public pages, never the private monorepo (n8n manual review)', () => {

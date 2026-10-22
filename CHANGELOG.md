@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Each codex file's `node` field is the fully-qualified identifier n8n expects, `n8n-nodes-dialnote.dialnote` and `n8n-nodes-dialnote.dialnoteTrigger`, instead of the bare package name (n8n manual review).
+
 ## 0.1.2
 
 - The nodes' Docs links (codex `primaryDocumentation` and `credentialDocumentation`) point at the README on the public mirror instead of the private monorepo, which returned 404 outside the organisation (n8n manual review).

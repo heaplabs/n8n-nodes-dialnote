@@ -92,6 +92,7 @@ The code lives in the dialnote monorepo (`n8n-nodes-dialnote/`), which is privat
 
 ## Version history
 
+- 0.1.3 — codex metadata names each node by its fully-qualified identifier.
 - 0.1.2 — the nodes' Docs links open the public README.
 - 0.1.1 — published from the public mirror with a provenance attestation; repository and issue links point there.
 - 0.1.0 — the dialnote API credential, the dialnote node (contacts, messages, notes, call logs, conversations) and the dialnote Trigger node (call completed, call recording completed).

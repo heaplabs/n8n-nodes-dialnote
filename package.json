@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-dialnote",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "dialnote community node for n8n: contacts, SMS, notes and call triggers over the dialnote public API",
   "license": "MIT",
   "homepage": "https://dialnote.com/docs/integrations/webhooks/",
