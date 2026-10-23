@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+- Verified by n8n: the README's Installation section now leads with installing from the nodes panel (self-hosted and n8n Cloud), keeping Settings > Community Nodes as the fallback for older self-hosted versions.
+
 ## 0.1.3
 
 - Each codex file's `node` field is the fully-qualified identifier n8n expects, `n8n-nodes-dialnote.dialnote` and `n8n-nodes-dialnote.dialnoteTrigger`, instead of the bare package name (n8n manual review).

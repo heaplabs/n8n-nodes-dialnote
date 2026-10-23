@@ -17,7 +17,7 @@ dialnote is a business phone system for calls, SMS and AI call notes. This node 
 
 ## Installation
 
-On a self-hosted n8n, open **Settings > Community Nodes > Install** and enter `n8n-nodes-dialnote` (the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) covers the details and the environment variable that allows community nodes). Releases are published to npm by GitHub Actions in the public repository [heaplabs/n8n-nodes-dialnote](https://github.com/heaplabs/n8n-nodes-dialnote) with a provenance attestation, and the node has been submitted to n8n for verification; until that is approved it does not appear in the nodes panel or on n8n Cloud.
+Search for **dialnote** in the nodes panel and install it from there (verified community node, self-hosted and n8n Cloud). On an older self-hosted n8n without verified nodes, open **Settings > Community Nodes > Install** and enter `n8n-nodes-dialnote` (the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) covers the details and the environment variable that allows community nodes). Releases are published to npm by GitHub Actions in the public repository [heaplabs/n8n-nodes-dialnote](https://github.com/heaplabs/n8n-nodes-dialnote) with a provenance attestation.
 
 ## Operations
 
@@ -92,6 +92,7 @@ The code lives in the dialnote monorepo (`n8n-nodes-dialnote/`), which is privat
 
 ## Version history
 
+- 0.1.4 — verified by n8n; installation wording.
 - 0.1.3 — codex metadata names each node by its fully-qualified identifier.
 - 0.1.2 — the nodes' Docs links open the public README.
 - 0.1.1 — published from the public mirror with a provenance attestation; repository and issue links point there.
